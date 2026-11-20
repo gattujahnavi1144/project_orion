@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project ORION | Four-slide presentation</title>
+  <style>
+    :root { font-family: "Segoe UI", Arial, sans-serif; color: #17243b; background: #eaf0f9; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { max-width: 1200px; margin: auto; padding: 24px; }
+    .slide {
+      min-height: 610px; margin-bottom: 24px; padding: clamp(24px, 5vw, 56px);
+      background: white; border-radius: 20px; box-shadow: 0 12px 32px #1c38651a;
+      display: flex; flex-direction: column; break-after: page;
+    }
+    .slide:last-child { break-after: auto; }
+    .hero { background: linear-gradient(125deg, #162e63, #2458a6 65%, #087c91); color: white; }
+    .eyebrow { font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .15em; color: #168192; }
+    .hero .eyebrow { color: #bcecf2; }
+    h1 { font-size: clamp(2.6rem, 6vw, 4.5rem); margin: 14px 0 8px; line-height: 1.05; }
+    h2 { font-size: clamp(2rem, 4vw, 3rem); color: #193d78; margin: 14px 0 22px; line-height: 1.1; }
+    h3 { margin: 0 0 8px; font-size: 1.12rem; }
+    p { line-height: 1.5; margin: 8px 0; }
+    .subtitle { font-size: 1.25rem; color: #e1edff; max-width: 760px; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 0; }
+    .two { grid-template-columns: repeat(2, 1fr); }
+    .card { background: #f0f5fc; border-radius: 14px; padding: 20px; border-top: 5px solid #3476cb; }
+    .hero .card { background: #ffffff1c; border-color: #83d9e3; }
+    .teal { border-color: #169b83; background: #eaf8f3; }
+    .amber { border-color: #e8a12a; background: #fff7e6; }
+    .red { border-color: #d65b57; background: #fff0ef; }
+    .purple { border-color: #8c67c9; background: #f6f1fc; }
+    .number { display: block; font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 750; line-height: 1.1; margin-bottom: 10px; }
+    .label { font-size: .94rem; line-height: 1.4; }
+    ul { padding-left: 1.2em; margin: 8px 0; line-height: 1.5; }
+    li { margin-bottom: 8px; }
+    .callout { padding: 16px 20px; border-radius: 10px; background: #eaf3ff; border-left: 5px solid #3978c6; margin-top: 10px; line-height: 1.45; }
+    .hero .callout { background: #ffffff1c; border-color: #8cdce5; }
+    .footer { margin-top: auto; padding-top: 20px; color: #5d708a; font-size: .78rem; line-height: 1.4; }
+    .hero .footer { color: #d5e8ff; }
+    a { color: inherit; }
+    @media (max-width: 700px) {
+      main { padding: 12px; }
+      .slide { min-height: 0; padding: 25px; }
+      .grid, .two { grid-template-columns: 1fr; }
+    }
+    @media print {
+      @page { size: landscape; margin: 8mm; }
+      :root { background: white; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      main { padding: 0; max-width: none; }
+      .slide { min-height: 180mm; margin: 0; box-shadow: none; padding: 10mm; }
+      .grid, .two { grid-template-columns: repeat(3, 1fr); }
+      .two { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="slide hero">
+      <div class="eyebrow">Slide 1 / 4 &bull; Executive overview</div>
+      <h1>Project ORION</h1>
+      <p class="subtitle">Customer demo readiness, outstanding risks and decisions</p>
+      <div class="grid">
+        <div class="card"><span class="number">24 Nov 2026</span><span class="label">Customer demo confirmed<br>11:00 AM IST</span></div>
+        <div class="card"><span class="number">23 / 24</span><span class="label">Tests passed in the 13 Nov QA result</span></div>
+        <div class="card"><span class="number">14,130</span><span class="label">Valid tickets displayed on the dashboard</span></div>
+      </div>
+      <div class="callout"><strong>Headline:</strong> Dashboard and search are confirmed for the demo. Live CSV export depends on fixing the staging timeout.</div>
+      <div class="footer">Based on the existing source-cited delivery brief. Historical findings, not a live status update.</div>
+    </section>
+
+    <section class="slide">
+      <div class="eyebrow">Slide 2 / 4 &bull; Delivery and quality</div>
+      <h2>What is ready — and what is not</h2>
+      <div class="grid two">
+        <div class="card teal">
+          <h3>Confirmed or fixed</h3>
+          <ul>
+            <li>Dashboard and searchable ticket list are confirmed demo features.</li>
+            <li>Authentication patch deployed 12 Nov and verified by QA on 13 Nov.</li>
+            <li>Customer approved the demo time on 18 Nov.</li>
+          </ul>
+        </div>
+        <div class="card amber">
+          <h3>Conditional or open</h3>
+          <ul>
+            <li>CSV export timed out after 65 seconds in staging; last recorded as open on 17 Nov.</li>
+            <li>Fix targeted for 20 Nov; completion is not confirmed. Workaround: batches of 1,000 rows.</li>
+            <li>Production launch date remains unconfirmed and awaits PMO after QA.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout"><strong>Scope:</strong> Dark mode and multi-language filters are Phase 2; the AI chatbot and sentiment widget are outside Phase 1.</div>
+      <div class="footer">Sources: project notes, email/chat, vendor notes and service-desk incidents, as cited in the delivery brief.</div>
+    </section>
+
+    <section class="slide">
+      <div class="eyebrow">Slide 3 / 4 &bull; Data and commercial risks</div>
+      <h2>Key risks to manage</h2>
+      <div class="grid">
+        <div class="card red">
+          <h3>Data quality &bull; HIGH</h3>
+          <p>370 of 14,500 rows lacked ticket IDs and were excluded. R-04 warns that missing IDs can distort the volume chart.</p>
+          <p><strong>Open:</strong> stakeholder and data-quality signoff, due 22 Nov.</p>
+        </div>
+        <div class="card amber">
+          <h3>Privacy &amp; security</h3>
+          <p>Demo data must be anonymized; completion was not stated.</p>
+          <p>Security review must decide whether audit logging is required for production.</p>
+        </div>
+        <div class="card purple">
+          <h3>Cost &amp; procurement</h3>
+          <p>CloudMetrics: ₹39,000 + 18% GST; optional annual AuditTrail: ₹42,000 + 18% GST.</p>
+          <p>Both quotes are unapproved; no CloudMetrics PO was recorded.</p>
+        </div>
+      </div>
+      <div class="callout">A cloud estimate of 68,000 has an unspecified currency and is not an approved budget. Neither quotes nor estimates are committed expenditure.</div>
+      <div class="footer">Source: existing Project ORION Delivery Brief, including cited notes, threads and incident records.</div>
+    </section>
+
+    <section class="slide">
+      <div class="eyebrow">Slide 4 / 4 &bull; Actions and decisions</div>
+      <h2>Next steps</h2>
+      <div class="grid two">
+        <div class="card">
+          <h3>Before the demo</h3>
+          <ul>
+            <li><strong>Backend + QA:</strong> resolve and retest export; decide whether to show it live.</li>
+            <li><strong>Data owner + stakeholders:</strong> complete signoff and acknowledge excluded rows.</li>
+            <li><strong>Project team:</strong> verify anonymization and no real customer PII.</li>
+          </ul>
+        </div>
+        <div class="card teal">
+          <h3>Production decisions</h3>
+          <ul>
+            <li><strong>PMO:</strong> confirm the production date after QA.</li>
+            <li><strong>Security:</strong> decide whether production audit logging is required.</li>
+            <li><strong>Procurement / Finance:</strong> review quotes; CloudMetrics quote valid until 25 Nov.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout"><strong>Closing message:</strong> The demo is scheduled, but export readiness, data signoff and production decisions still require confirmation.</div>
+      <div class="footer">The original four DOCX files are not currently in the workspace and could not be independently rechecked. See the <a href="PROJECT_ORION_BRIEF.md">source-cited delivery brief</a> and <a href="PROJECT_ORION_FINAL_REPORT.html">full report</a>.</div>
+    </section>
+  </main>
+</body>
+</html>
